@@ -22,7 +22,7 @@ main {
     display: flex;
     flex-direction: column;
     background: #372d3b;
-    max-height: 75vh;
+    max-height: 85vh;
     padding: 5rem 5% 2rem;
     color: #ffffde;
     justify-content: end;
@@ -171,16 +171,19 @@ input[type=text], input[type=email], textarea {
 textarea {
     min-height: 200px;
 }
-input[type=submit] {
+button[type=submit] {
     background: #372d3b;
     outline: none;
     border: none;
     cursor: pointer;
     color: #ffffde;
     font-size: 1.15rem;
-    padding: .2rem .9rem; 
+    padding: .5rem 1.2rem; 
+    position: inline-block;
+    text-align: center;
+    white-space: nowrap;
 }
-input[type=submit]:hover {
+button[type=submit]:hover {
     color: #D94362;
     opacity: 0.8;
 }
