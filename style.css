@@ -22,8 +22,8 @@ main {
     display: flex;
     flex-direction: column;
     background: #372d3b;
-    min-height: 85vh;
-    padding: 1rem 5% 2rem;
+    min-height: 75vh;
+    padding: 5rem 5% 2rem;
     color: #ffffde;
     justify-content: end;
 }
