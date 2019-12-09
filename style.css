@@ -22,7 +22,7 @@ main {
     display: flex;
     flex-direction: column;
     background: #372d3b;
-    min-height: 75vh;
+    max-height: 75vh;
     padding: 5rem 5% 2rem;
     color: #ffffde;
     justify-content: end;
@@ -332,12 +332,18 @@ input[type=submit]:hover {
     .menu-wrap .menu > div > nav ul li a:hover {
         color: #D94362;
     }
+    .about {
+        padding-top: 7rem;
+    }
+    .social-icons a {
+        padding-right: .9rem;
+    }
 }
 
 @media (min-width: 625px) {
     body {
         display: grid;
-        grid-template-rows: 50px 1fr 70px;
+        grid-template-rows: 80px 1fr 70px;
     }
     header {
         background: #372d3b;
@@ -364,6 +370,10 @@ input[type=submit]:hover {
     }
     input[type=checkbox] {
         display: none;
+    }
+    
+    .about {
+        padding-top: 9rem;
     }
 }
 @media (min-width: 720px){
