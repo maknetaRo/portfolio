@@ -6,7 +6,7 @@
 
 body {
     display: grid;
-    grid-template-rows:  1fr 50px;
+    grid-template-rows: 70px 1fr 50px;
     text-align: left;
     background: #ffffde;
     font-family: 'Roboto Slab', serif;
@@ -16,6 +16,37 @@ body {
 main {
     display: grid;
     grid-template-rows: 1fr auto;
+}
+
+nav  {
+    background: #372d3b;
+    
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    background: #372d3b;
+    padding: .8rem 5%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    justify-content: end;
+    text-align: left;
+    
+}
+nav ul li {
+    padding-left: 3rem;
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #ffffde;
+}
+nav ul a:hover {
+    color: #D94362;
 }
 
 .about {
@@ -205,172 +236,27 @@ button[type=submit]:hover {
     color: #d94362;
 }
 @media (max-width: 620px) {
-    .menu-wrap {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1;
-    }
-    .menu-wrap .toggler {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        opacity: 0;
-    }
-    .menu-wrap .hamburger {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 60px;
-        height: 60px;
-        z-index: 1;
-        padding: 1rem;
-        background: #372d3b;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    /* hamburger line */
-    .menu-wrap .hamburger > div {
-        position:relative;
-        flex: none;
-        width: 100%;
-        height: 2px;
-        background-color: #D94362;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.4s ease;
-    }
-    .menu-wrap .hamburger > div:before,
-    .menu-wrap .hamburger > div:after{
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: -10px;
-        width: 100%;
-        height: 2px;
-        background:inherit;
-    }
-    .menu-wrap .hamburger > div:after {
-        top: 10px;
-    }
-
-    /* Toggler animate */ 
-    .menu-wrap .toggler:checked + .hamburger > div {
-        transform: rotate(135deg);
-    }
-
-    /* Turn lines into X */
-    .menu-wrap .toggler:checked + .hamburger > div:before,
-    .menu-wrap .toggler:checked + .hamburger > div:after {
-        top: 0;
-        transform: rotate(90deg);
-    }
-    .menu-wrap .toggler:checked:hover + .hamburger > div {
-        transform: rotate(225deg);
-    }
-
-    /* Show menu*/
-    .menu-wrap .toggler:checked ~ .menu {
-        visibility: visible;
-    }
-    .menu-wrap .toggler:checked ~ .menu > div {
-        transform: scale(1);
-        transition-duration: 0.75s ;
-    }
-     .menu-wrap .toggler:checked ~ .menu > div > nav {
-        opacity: 1;
-        transition: opacity 0.4s ease 0.4s;
-    }
-    
-    .menu-wrap .menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        visibility: hidden;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .menu-wrap .menu > div {
-        background: #372d3b;
-        width: 200vw;
-        height: 200vh;
-        display: flex;
-        flex: none;
-        align-items: center;
-        justify-content: center;
-        transform: scale(0);
-        transition: all 0.4s ease;
-    } 
-    .menu-wrap .menu > div > nav {
-        text-align: center;
-        max-width: 90vw;
-        max-height: 100vh;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        z-index: 2;
-    } 
-    .menu-wrap .menu > div > nav > li {
-        list-style: none;
-        color: #ffffde;
-        font-size: 1.5rem;
-        padding: 1rem;
-    }
-    
-    .menu-wrap .menu > div > nav ul  li  a {
-        color: #ffffde;
-        text-decoration: none;
-       
-    } 
-    .menu-wrap .menu > div > nav ul li a:hover {
-        color: #D94362;
-    }
+   
     .about {
         padding-top: 7rem;
     }
     .social-icons a {
         padding-right: .9rem;
     }
+    nav ul a {
+        font-size: .9rem;
+    }
 }
 
 @media (min-width: 625px) {
     body {
         display: grid;
-        grid-template-rows: 80px 1fr 70px;
+        grid-template-rows: 100px 1fr 70px;
     }
     header {
         background: #372d3b;
     }
-    nav ul {
-        background: #372d3b;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        padding-top: 1rem;
-        
-    }
-    nav ul li {
-        padding-left: 3rem;
-        list-style: none;
-    }
-    
-    nav ul a {
-        text-decoration: none;
-        color: #ffffde;
-    }
-    nav ul a:hover {
-        color: #D94362;
-    }
+   
     input[type=checkbox] {
         display: none;
     }
@@ -380,7 +266,7 @@ button[type=submit]:hover {
     }
 }
 @media (min-width: 720px){
-    nav, .about, .projects, .contact, .footer {
+    nav ul , .about, .projects, .contact, .footer {
         padding-left: 15%;
         padding-right: 10%;
     }
@@ -407,14 +293,14 @@ button[type=submit]:hover {
         grid-template-columns: 1fr 1fr;
         grid-gap: 3rem;
     }
-    nav, .about, .projects, .contact, .footer {
+    nav ul , .about, .projects, .contact, .footer {
         padding-left: 10%;
         padding-right: 10%;
     }
 }
 @media (min-width: 1440px) {
     
-    nav, .about, .projects, .contact, .footer {
+    nav ul , .about, .projects, .contact, .footer {
         padding-left: 15%;
         padding-right: 15%;
     }
